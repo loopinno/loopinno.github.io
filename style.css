@@ -1,0 +1,129 @@
+body {
+	margin: 0;
+	text-align: center; /* layout center */
+	background: #eff;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 15px;
+}
+
+.container {
+	max-width: 930px;
+	margin: 0 auto; /* layout center */
+}
+
+#showcase {
+	font-size: 0; /* remove white space for inline blocks */
+}
+
+.panel {
+	width: 310px;
+	height: 260px;
+	border: 1px solid #bfe5ff;
+	background-color: #dff2ff;
+	box-sizing: border-box;
+	display: inline-block; /* floating */
+	vertical-align: middle; /* in a line */
+	position: relative; /* for overlay div */
+}
+
+/* for vertical middle alignment */
+.panel::before {
+	content: " ";
+	height: 100%;
+	width: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#showcase #logo, #showcase #more {
+	background-image: url("./images/back.png");
+}
+
+.panel img {
+	max-width: 90%;
+	max-height: 90%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.panel:hover img {
+	max-height: 75%;
+	vertical-align: bottom;
+}
+
+/* panel overlay div */
+.panel div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.panel div:before {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 0;
+	height: 100%;
+	border: 2px solid #9fd8ff;
+	border-left: none;
+	border-right: none;
+	transition: all 0.3s;
+	box-sizing: border-box;
+}
+
+.panel:hover div:before {
+	width: 100%;
+	left: 0;
+}
+
+.panel div:after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	height: 0;
+	border: 2px solid #9fd8ff;
+	border-top: none;
+	border-bottom: none;
+	transition: all 0.3s;
+	box-sizing: border-box;
+}
+
+.panel:hover div:after {
+	height: 100%;
+	top: 0;
+}
+
+.panel div p {
+	color: #005f9f;
+	font-size: 15px;
+	line-height: 150%;
+	visibility: hidden; /* visible on hover */
+}
+
+.panel:hover div p {
+	visibility: visible;
+}
+
+.panel a, .panel a:hover, .panel a:active, .panel a:visited {
+	color: #9fd8ff;
+}
+
+#footer {
+	height:70px;
+	position: relative;
+}
+
+#footer p {
+	position:absolute;
+	margin:auto;
+	left: 0;
+	right: 0;
+	bottom: 5px;
+	color: #999;
+}
